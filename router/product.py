@@ -26,7 +26,7 @@ def get_all_products():
     404: {
         "content": {
             "text/plain": {
-                "example": "Product not with{id} available"
+                "example": "Product with{id} not available"
             }
         },
         "description": "A cleartext error message"
