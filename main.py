@@ -27,6 +27,7 @@ def index():
 def story_exception_handler(request: Request, exc:StoryException):
    return JSONResponse(
        status_code= 418, 
+       
        content= {'detail': exc.name}
    )
 

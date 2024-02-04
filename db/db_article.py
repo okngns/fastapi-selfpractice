@@ -27,11 +27,11 @@ def get_article(db: Session, id: int = None):
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Article with id {id} not found",
         )
-    try:
-        return article
-    except Exception as e:
-        print(f"Error during Pydantic model conversion: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Internal Server Error"
-        )
+
+    return article
+    # except Exception as e:
+    #     print(f"Error during Pydantic model conversion: {e}")
+    #     raise HTTPException(
+    #         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+    #         detail="Internal Server Error"
+    #     )
