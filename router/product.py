@@ -18,8 +18,9 @@ def get_all_products():
 @router.get('/withheader')
 def get_products(
     response: Response,
-    custom_header: Optional[List[str]] = Header(None)    
+    custom_header: List[str] = Header(None)  #request headers 
 ):
+    response.headers['custom_response_header'] = "and ".join(custom_header)
     return products
 
 @router.get('/{id}', responses={
